@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="produto-container">
+  <%= render @produto %>
+</div>
+
+<div>
+  <%= link_to "Edit this produto", edit_produto_path(@produto), class: "link back-button" %> |
+  <%= link_to "Back to produtos", produtos_path, class: "link back-button" %>
+
+  <%= button_to "Destroy this produto", @produto, method: :delete, class: "destroy-button" %>
+</div>

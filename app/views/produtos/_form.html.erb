@@ -1,0 +1,32 @@
+<%= form_with(model: produto) do |form| %>
+  <% if produto.errors.any? %>
+    <div class="error-message">
+      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
+
+      <ul>
+        <% produto.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, class: "form-label" %>
+    <%= form.text_field :nome, class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.label :descricao, class: "form-label" %>
+    <%= form.text_field :descricao, class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.label :preco, class: "form-label" %>
+    <%= form.text_field :preco, class: "form-input" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "submit-button" %>
+  </div>
+<% end %>
